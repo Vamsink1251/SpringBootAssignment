@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Save Student</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>Student Directory</h3>
+    <hr>
+
+    <p class="h4 mb-4">Save Student</p>
+
+    <form action="#" th:action="@{/university/saveStudent}"
+          th:object="${student}" method="POST">
+
+        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{university}">
+
+        <input type="text" th:field="*{firstName}"
+               class="form-control mb-4 col-4" placeholder="firstName">
+        <input type="text" th:field="*{lastName}"
+               class="form-control mb-4 col-4" placeholder="lastName">
+        <input type="text" th:field="*{email}"
+               class="form-control mb-4 col-4" placeholder="Email">
+
+        <button type="submit" class="btn btn-info col-2">Save</button>
+
+    </form>
+
+    <hr>
+    <a th:href="@{/university/students/{id}(id=${student.university.id})}">Back to Students List</a>
+
+</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
